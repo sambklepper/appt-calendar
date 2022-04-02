@@ -4,12 +4,11 @@ const {
     getAppointments,
     getAppointmentById,
     createAppointment,
-    updateAppointment
+    updateAppointment,
+    deleteAppointment
 } = require('../controller/appointmentController')
 
-// @toDo delete one appointment route
-
 router.route('/').get(getAppointments).post(createAppointment)
-router.route('/:id').get(getAppointmentById).put(updateAppointment)
+router.route('/:id').get(getAppointmentById).put(updateAppointment).delete(deleteAppointment)
 
 module.exports = router

@@ -62,9 +62,25 @@ const updateAppointment = asyncHandler(async (req, res) => {
     res.status(200).json(updateAppointment)
 })
 
+// @desc  Delete an appointment
+// @route DELETE /api/v1/appointments/:id
+// @access Public
+const deleteAppointment = asyncHandler(async (req, res) => {
 
-// @toDo  Delete an appointment
+    const appointment = await Appointment.findById(req.params.id)
+
+    if (!appointment) {
+        throw new Error('No appointment found')
+    }
+
+    await Appointment.findByIdAndDelete(req.params.id)
+
+    res.status(200).json({
+        success: true,
+        data: {}
+    })
+})
 
 module.exports = {
-    getAppointments, createAppointment, getAppointmentById, updateAppointment
+    getAppointments, createAppointment, getAppointmentById, updateAppointment, deleteAppointment
 }
