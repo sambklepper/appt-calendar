@@ -43,7 +43,6 @@ const createAppointment = asyncHandler(async (req, res, next) => {
 
 })
 
-// @toDo  Update an appointment
 // @desc  Update an appointment
 // @route PUT /api/v1/appointments/:id
 // @access Public
