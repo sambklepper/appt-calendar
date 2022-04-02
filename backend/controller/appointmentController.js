@@ -15,6 +15,21 @@ const getAppointments = asyncHandler(async (req, res, next) => {
 
 })
 
+// @desc  Get single appointment
+// @route GET /api/v1/appointments/:id
+// @access Public
+const getAppointment = asyncHandler(async(req, res) => {
+    const appointment = await Appointment.findById(req.params.id)
+
+    if (!appointment) {
+        throw new Error('No appointment found')
+    }
+    res.status(200).json({
+        success: true,
+        data: appointment
+    })
+})
+
 // @desc  Create an appointment
 // @route POST /api/v1/appointments
 // @access Public
@@ -28,6 +43,9 @@ const createAppointment = asyncHandler(async (req, res, next) => {
 
 })
 
+// @toDo  Update an appointment
+// @toDo  Delete an appointment
+
 module.exports = {
-    getAppointments, createAppointment
+    getAppointments, createAppointment, getAppointment
 }
