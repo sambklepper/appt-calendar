@@ -18,7 +18,7 @@ const getAppointments = asyncHandler(async (req, res, next) => {
 // @desc  Get single appointment
 // @route GET /api/v1/appointments/:id
 // @access Public
-const getAppointment = asyncHandler(async(req, res) => {
+const getAppointmentById = asyncHandler(async (req, res) => {
     const appointment = await Appointment.findById(req.params.id)
 
     if (!appointment) {
@@ -44,8 +44,42 @@ const createAppointment = asyncHandler(async (req, res, next) => {
 })
 
 // @toDo  Update an appointment
+// @desc  Update an appointment
+// @route PUT /api/v1/appointments/:id
+// @access Public
+const updateAppointment = asyncHandler(async (req, res) => {
+
+    const {
+        title,
+        description,
+        date,
+        type,
+        status,
+    } = req.body
+
+    const appointment = await Appointment.findById(req.params.id)
+
+    if (appointment) {
+        appointment.title = title
+        appointment.description = description
+        appointment.date = date
+        appointment.type = type
+        appointment.status = status
+
+        await appointment.save()
+        res.status(200).json({
+            success: true,
+            data: appointment
+        })
+    } else {
+        res.status(404)
+        throw new Error('No appointment found')
+    }
+})
+
+
 // @toDo  Delete an appointment
 
 module.exports = {
-    getAppointments, createAppointment, getAppointment
+    getAppointments, createAppointment, getAppointmentById, updateAppointment
 }
