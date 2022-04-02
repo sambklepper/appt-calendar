@@ -4,20 +4,27 @@ const appointmentSchema = mongoose.Schema(
     {
         title: {
             type: String,
-            required: true
+            required: [true, 'Title is required'],
         },
         description: {
             type: String,
-            required: true
+            required: [true, 'Description is required'],
         },
         date: {
             type: Date,
-            required: true
+            required: [true, 'Date is required'],
         },
         type: {
             type: String,
-            required: true
-
+            required: [true, 'Type is required'],
+            enum: ['professional', 'personal', 'medical', 'emergency', 'other'],
+            default: 'professional'
+        },
+        status: {
+            type: String,
+            required: [true, 'Status is required'],
+            enum: ['pending', 'confirmed', 'cancelled'],
+            default: 'pending'
         },
     },
     {
