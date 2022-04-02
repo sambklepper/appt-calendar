@@ -49,32 +49,18 @@ const createAppointment = asyncHandler(async (req, res, next) => {
 // @access Public
 const updateAppointment = asyncHandler(async (req, res) => {
 
-    const {
-        title,
-        description,
-        date,
-        type,
-        status,
-    } = req.body
-
     const appointment = await Appointment.findById(req.params.id)
 
-    if (appointment) {
-        appointment.title = title
-        appointment.description = description
-        appointment.date = date
-        appointment.type = type
-        appointment.status = status
-
-        await appointment.save()
-        res.status(200).json({
-            success: true,
-            data: appointment
-        })
-    } else {
-        res.status(404)
+    if (!appointment) {
         throw new Error('No appointment found')
     }
+
+    const updateAppointment = await Appointment.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+    )
+
+    res.status(200).json(updateAppointment)
 })
 
 
