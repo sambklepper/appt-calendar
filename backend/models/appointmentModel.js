@@ -6,10 +6,6 @@ const appointmentSchema = mongoose.Schema(
             type: String,
             required: [true, 'Title is required'],
         },
-        description: {
-            type: String,
-            required: [true, 'Description is required'],
-        },
         date: {
             type: Date,
             required: [true, 'Date is required'],
@@ -26,6 +22,31 @@ const appointmentSchema = mongoose.Schema(
             enum: ['pending', 'confirmed', 'cancelled'],
             default: 'pending'
         },
+        description: {
+            type: String,
+            required: [true, 'Description is required'],
+        },
+        address: {
+            street: {
+                type: String,
+            },
+            city: {
+                type: String,
+            },
+            state: {
+                type: String,
+            },
+
+            zipCode: {
+                type: String,
+            },
+        },
+        notes: [{
+            type: String,
+        }],
+        url: [{
+            type: String,
+        }],
     },
     {
         timestamps: true,
