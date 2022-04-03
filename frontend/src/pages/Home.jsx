@@ -1,47 +1,45 @@
 import {useState, useEffect} from 'react';
+import { getList } from "../services/appointmentService";
 
 
 export default function Home() {
-    const [appointments, setAppointments] = useState({});
-
-    const fetchData = async () => {
-        const response = await fetch(`/api/v1/appointments`);
-        const data = await response.json();
-        setAppointments(data);
-    };
+    const [list, setList] = useState({});
 
     useEffect(() => {
-        fetchData();
-    }, [])
+        getList().then(items => {
+                setList(items);
+                // console.log(items);
+        })
+    }, []);
 
 
     return (
         <div>
             <h1 className='text-center'>Appointments</h1>
-            <div className="appointments-list">
-
-                {appointments.data?.map((appointment => (
-                    <div key={appointment._id} className="appointments">
-                        <h3>{appointment.title}</h3>
-                        <p>{appointment.description}</p>
-                        <p>{appointment.date}</p>
-                        <p>{appointment.status}</p>
-                        <p>{appointment.type}</p>
-                        <p>{appointment.notes.map((note) => (<p>{note}</p>))}</p>
+            <div className="items-list">
+                {/*{console.log(list)}*/}
+                {list.data?.map((item => (
+                    <div key={item._id} className="items">
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                        <p>{item.date}</p>
+                        <p>{item.status}</p>
+                        <p>{item.type}</p>
+                        <p>{item.notes.map((note, index) => (<span key={index}>{note}</span>))}</p>
                         <p>
-                            {appointment.url ? (
-                                    <a href={appointment.url} target="_blank"
-                                       rel="noopener noreferrer">{appointment.url}</a>)
+                            {item.url ? (
+                                    <a href={item.url} target="_blank"
+                                       rel="noopener noreferrer">{item.url}</a>)
                                 : ''}
                         </p>
                         <p>
-                            {appointment.address.street}
+                            {item.address.street}
                         </p>
                         <p>
-                            {appointment.address.city}, <span>{appointment.address.state}</span>
+                            {item.address.city}, <span>{item.address.state}</span>
                         </p>
                         <p>
-                            {appointment.address.zipCode}
+                            {item.address.zipCode}
                         </p>
                     </div>)))}
             </div>
