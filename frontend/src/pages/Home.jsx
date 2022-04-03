@@ -5,23 +5,14 @@ import useFetch from '../hooks/useFetch';
 
 
 export default function Home() {
-    const [list, setList] = useState({});
     const url = '/api/v1/appointments';
     const {data, loading} = useFetch(url);
-
-    // useEffect(() => {
-    //     getList().then(items => {
-    //         setList(items);
-    //         // console.log(items);
-    //     })
-    // }, []);
-
 
     return (
         <div>
             <h1 className='text-center'>Appointments</h1>
             <div className="items-list">
-                {console.log(data?.data)}
+                {/*{console.log(data?.data)}*/}
                 {data?.data.map((item => (
                     <div key={item._id} className="card">
                         <div className="card-header">
