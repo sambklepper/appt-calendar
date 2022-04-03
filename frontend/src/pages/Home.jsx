@@ -1,25 +1,28 @@
 import {useState, useEffect} from 'react';
 import {getList} from "../services/appointmentService";
 import Moment from 'react-moment';
+import useFetch from '../hooks/useFetch';
 
 
 export default function Home() {
     const [list, setList] = useState({});
+    const url = '/api/v1/appointments';
+    const {data, loading} = useFetch(url);
 
-    useEffect(() => {
-        getList().then(items => {
-            setList(items);
-            // console.log(items);
-        })
-    }, []);
+    // useEffect(() => {
+    //     getList().then(items => {
+    //         setList(items);
+    //         // console.log(items);
+    //     })
+    // }, []);
 
 
     return (
         <div>
             <h1 className='text-center'>Appointments</h1>
             <div className="items-list">
-                {/*{console.log(list)}*/}
-                {list.data?.map((item => (
+                {console.log(data?.data)}
+                {data?.data.map((item => (
                     <div key={item._id} className="card">
                         <div className="card-header">
                             <h3>{item.title}</h3>
@@ -59,10 +62,12 @@ export default function Home() {
                         </div>
 
                         <div className="card-footer">
-                            <div className={item.status === 'pending' ? 'pill-pending' : item.status === 'confirmed' ? 'pill-confirmed' : item.status === 'cancelled' ? 'pill-cancelled' : 'pill'}>
+                            <div
+                                className={item.status === 'pending' ? 'pill-pending' : item.status === 'confirmed' ? 'pill-confirmed' : item.status === 'cancelled' ? 'pill-cancelled' : 'pill'}>
                                 <p>{item.status}</p>
                             </div>
-                            <div className={item.type === 'professional' ? 'pill-professional' : item.type === 'personal' ? 'pill-personal' : item.type === 'medical' ? 'pill-medical' : 'pill'}>
+                            <div
+                                className={item.type === 'professional' ? 'pill-professional' : item.type === 'personal' ? 'pill-personal' : item.type === 'medical' ? 'pill-medical' : 'pill'}>
                                 <p>{item.type}</p>
                             </div>
                         </div>
