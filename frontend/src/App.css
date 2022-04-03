@@ -60,8 +60,102 @@ nav li {
     margin: 2rem 6rem;
 }
 
-.appointments {
+.card {
     margin: 1rem 1.25rem;
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.50);
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.card-header h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 0.25rem;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.50rem;
+    margin-bottom: 0.25rem;
+}
+
+.notes h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.15rem;
+}
+
+/*.notes {*/
+/*    border-right: 1px solid #ccc;*/
+/*    padding-right: 1rem;*/
+/*}*/
+
+.address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.links {
+    margin-bottom: 0.25rem;
+}
+
+.links h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.15rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.25rem;
+}
+
+.pill {
+    background-color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+}
+
+.pill-pending {
+    background-color: orange;
+    color: dimgrey;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+}
+
+.pill-professional {
+    color: dodgerblue;
+    background-color: lightblue;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+}
+
+.pill-personal {
+    color: green;
+    background-color: darkgreen;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
 }
