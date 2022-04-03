@@ -145,7 +145,18 @@ nav li {
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
 }
-
+.pill-confirmed {
+    background-color: blue;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+}
+.pill-cancelled {
+    background-color: red;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+}
 .pill-professional {
     color: dodgerblue;
     background-color: lightblue;
@@ -154,8 +165,14 @@ nav li {
 }
 
 .pill-personal {
-    color: green;
+    color: #fff;
     background-color: darkgreen;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+}
+.pill-medical {
+    color: #fff;
+    background-color: deeppink;
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
 }

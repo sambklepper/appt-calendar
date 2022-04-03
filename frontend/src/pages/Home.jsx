@@ -59,10 +59,10 @@ export default function Home() {
                         </div>
 
                         <div className="card-footer">
-                            <div className={item.status === 'pending' ? 'pill-pending' : 'pill'}>
+                            <div className={item.status === 'pending' ? 'pill-pending' : item.status === 'confirmed' ? 'pill-confirmed' : item.status === 'cancelled' ? 'pill-cancelled' : 'pill'}>
                                 <p>{item.status}</p>
                             </div>
-                            <div className={item.type === 'professional' ? 'pill-professional' : 'pill'}>
+                            <div className={item.type === 'professional' ? 'pill-professional' : item.type === 'personal' ? 'pill-personal' : item.type === 'medical' ? 'pill-medical' : 'pill'}>
                                 <p>{item.type}</p>
                             </div>
                         </div>
