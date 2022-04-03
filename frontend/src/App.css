@@ -11,7 +11,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 1.25rem;
+    padding: 2rem 1.25rem;
+}
+
+.text-center {
+    text-align: center;
 }
 
 nav {
@@ -48,4 +52,16 @@ nav a {
 nav li {
     margin-right: 1.25rem;
     list-style-type: none;
+}
+
+.appointments-list {
+    max-width: 800px;
+    padding: 1.25rem 2.25rem;
+    margin: 2rem 6rem;
+}
+
+.appointments {
+    margin: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
 }
