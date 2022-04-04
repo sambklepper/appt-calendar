@@ -40,6 +40,7 @@ const createAppointment = asyncHandler(async (req, res, next) => {
         success: true,
         data: appointment
     })
+    console.log(appointment)
 
 })
 

@@ -3,13 +3,17 @@ export function getList() {
         .then(data => data.json())
 }
 
-export function setItem(item) {
+export function setItem(appointment) {
     return fetch('/api/v1/appointments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({item})
+        body: JSON.stringify(appointment)
+
     })
-        .then(data => data.json())
+        .then(appointment => appointment.json())
+        .then((info) => {
+            console.log(info)
+        })
 }

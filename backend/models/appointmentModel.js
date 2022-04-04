@@ -36,7 +36,6 @@ const appointmentSchema = mongoose.Schema(
             state: {
                 type: String,
             },
-
             zipCode: {
                 type: String,
             },
