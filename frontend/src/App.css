@@ -54,6 +54,10 @@ nav li {
     list-style-type: none;
 }
 
+
+/* ---------------------- */
+/* ------ Home Page ------ */
+/* ---------------------- */
 .appointments-list {
     max-width: 800px;
     padding: 1.25rem 2.25rem;
@@ -175,4 +179,93 @@ nav li {
     background-color: deeppink;
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
+}
+
+/* ---------------------- */
+/* ------ Add Page ------ */
+/* ---------------------- */
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-form-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 600px;
+    padding: 1.25rem 1.5rem;
+    background-color: #dfdfdf;
+    border-radius: 0.75rem;
+}
+
+.add-form-inputs {
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.add-form-inputs label{
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+.address-form-section {
+    margin: 2rem 0rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.address-heading {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+.small-text {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.optional-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-form-inputs input {
+    margin-bottom: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.add-form-select-textarea {
+    margin-bottom: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.add-form-button {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #3636de;
+    color: #fff;
+}
+
+.add-form-button:hover {
+    cursor: pointer;
+    background-color: #0c0cd8;
 }
