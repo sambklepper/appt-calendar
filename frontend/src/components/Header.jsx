@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import {FaHome, FaInfoCircle, FaPlus} from "react-icons/fa";
 
 export default function Header() {
     return (<nav className="nav">
@@ -11,13 +12,21 @@ export default function Header() {
             <div className="nav-links">
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/">
+                            <span className='nav-icon'>
+                                <FaHome />
+                            </span>
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/add">Add Appointment</Link>
+                        <Link to="/add"><span className='nav-icon'><FaPlus /></span></Link>
                     </li>
                     <li>
-                        <Link to="/about">About</Link>
+                        <Link to="/about">
+                            <span className='nav-icon'>
+                                <FaInfoCircle />
+                            </span>
+                        </Link>
                     </li>
                 </ul>
             </div>

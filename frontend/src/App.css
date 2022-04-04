@@ -37,6 +37,11 @@ nav .nav-container {
     color: slategray;
 }
 
+.logo:hover {
+
+    color: #899bb0;
+}
+
 nav ul {
     display: flex;
     justify-content: space-around;
@@ -54,6 +59,14 @@ nav li {
     list-style-type: none;
 }
 
+.nav-icon {
+    font-size: 1.25rem;
+    color: slategray;
+}
+
+.nav-icon:hover {
+    color: #899bb0;
+}
 
 /* ---------------------- */
 /* ------ Home Page ------ */
