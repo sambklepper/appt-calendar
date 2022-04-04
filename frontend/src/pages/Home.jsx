@@ -1,10 +1,15 @@
 import Moment from "react-moment";
 import useFetch from '../hooks/useFetch';
+import Spinner from "../components/Spinner";
 
 
 export default function Home() {
     const url = '/api/v1/appointments';
     const {data, loading} = useFetch(url);
+
+    if (loading) {
+        return <Spinner />
+    }
 
     return (
         <div>
