@@ -9,7 +9,7 @@ export function setItem(item) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ item })
+        body: JSON.stringify({item})
     })
         .then(data => data.json())
 }

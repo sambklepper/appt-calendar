@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useDebugValue} from 'react';
 
 const useFetch = (url) => {
     const [data, setData] = useState(null);
@@ -19,6 +19,8 @@ const useFetch = (url) => {
         };
         fetchData();
     }, [url]);
+
+    useDebugValue(data ?? loading);
 
     return {data, loading, error};
 };
