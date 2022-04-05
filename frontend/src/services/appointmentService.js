@@ -17,3 +17,14 @@ export function setItem(appointment) {
             console.log(info)
         })
 }
+
+export function deleteItem(id) {
+
+    return fetch(`/api/v1/appointments/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(data => data.json())
+}

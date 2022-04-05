@@ -2,11 +2,15 @@ import Moment from "react-moment";
 import useFetch from '../hooks/useFetch';
 import Spinner from "../components/Spinner";
 import {FaEdit, FaTimes} from "react-icons/fa";
+// import {useNavigate} from "react-router-dom";
+import {deleteItem} from "../services/appointmentService";
+
 
 
 export default function Home() {
     const url = '/api/v1/appointments';
     const {data, loading} = useFetch(url);
+    // const navigate = useNavigate();
 
     if (loading) {
         return <Spinner/>
@@ -22,8 +26,8 @@ export default function Home() {
                             <FaEdit/>
                         </span>
                     <span className="icon-nav-item">
-                            <FaTimes/>
-                        </span>
+                            <FaTimes onClick={() => deleteItem(item._id)}/>
+                    </span>
                 </div>
                 <div className="card-header">
                     <h3>{item.title}</h3>

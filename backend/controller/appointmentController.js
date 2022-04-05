@@ -40,7 +40,7 @@ const createAppointment = asyncHandler(async (req, res, next) => {
         success: true,
         data: appointment
     })
-    console.log(appointment)
+    // console.log(appointment)
 
 })
 
@@ -69,6 +69,7 @@ const updateAppointment = asyncHandler(async (req, res) => {
 const deleteAppointment = asyncHandler(async (req, res) => {
 
     const appointment = await Appointment.findById(req.params.id)
+    // console.log(`Deleting: ${req.params.id}`)
 
     if (!appointment) {
         throw new Error('No appointment found')
