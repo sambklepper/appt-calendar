@@ -1,8 +1,16 @@
+// Get all appointments
 export function getList() {
     return fetch(`/api/v1/appointments`)
         .then(data => data.json())
 }
 
+// Get appointment by id
+export async function getAppointmentByIdAsync(id) {
+    const data = await fetch(`/api/v1/appointments/${id}`)
+    return data.json()
+}
+
+// Create new appointment
 export function setItem(appointment) {
     return fetch('/api/v1/appointments', {
         method: 'POST',
@@ -18,11 +26,7 @@ export function setItem(appointment) {
         })
 }
 
-export function getAppointmentById(id) {
-    return fetch(`/api/v1/appointments/${id}`)
-        .then(data => data.json())
-}
-
+// Edit appointment
 export function editAppointment(appointment) {
     return fetch(`/api/v1/appointments/${appointment.id}`, {
         method: 'PUT',
@@ -38,8 +42,8 @@ export function editAppointment(appointment) {
         })
 }
 
+// Delete appointment
 export function deleteItem(id) {
-
     return fetch(`/api/v1/appointments/${id}`, {
         method: 'DELETE',
         headers: {
