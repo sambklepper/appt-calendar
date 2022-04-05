@@ -1,4 +1,4 @@
-import {editAppointment,getAppointmentByIdAsync} from "../services/appointmentService";
+import {editAppointment, getAppointmentByIdAsync} from "../services/appointmentService";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import Spinner from "./Spinner";
