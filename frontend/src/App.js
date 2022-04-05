@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import Add from "./pages/Add";
 import About from "./pages/About";
+import Appointment from "./components/Appointment";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <div className="app-wrapper">
                     <Routes>
                         <Route path="/" element={<Home/>}/>
+                        <Route path='/appointment/:id' element={<Appointment />} />
                         <Route path="/add" element={<Add/>}/>
                         <Route path="/about" element={<About/>}/>
                     </Routes>

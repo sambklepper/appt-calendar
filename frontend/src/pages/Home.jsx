@@ -2,9 +2,8 @@ import Moment from "react-moment";
 import useFetch from '../hooks/useFetch';
 import Spinner from "../components/Spinner";
 import {FaEdit, FaTimes} from "react-icons/fa";
-// import {useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {deleteItem} from "../services/appointmentService";
-
 
 
 export default function Home() {
@@ -23,7 +22,9 @@ export default function Home() {
             {data?.data.map((item => (<div key={item._id} className="card">
                 <div className="icon-nav">
                         <span className="icon-nav-item">
-                            <FaEdit/>
+                            <Link to={`/appointment/${item._id}`}>
+                                 <FaEdit/>
+                            </Link>
                         </span>
                     <span className="icon-nav-item">
                             <FaTimes onClick={() => deleteItem(item._id)}/>

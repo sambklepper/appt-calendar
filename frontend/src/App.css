@@ -145,6 +145,15 @@ nav li {
     margin-left: 0.5rem;
 }
 
+.icon-nav-item a {
+    text-decoration: none;
+    color: slategray;
+}
+
+.icon-nav-item a:hover {
+    color: darkseagreen;
+}
+
 .card-header h3 {
     font-size: 1.25rem;
     font-weight: bold;
@@ -329,4 +338,16 @@ nav li {
 .add-form-button:hover {
     cursor: pointer;
     background-color: #0c0cd8;
+}
+
+
+/* ---------------------- */
+/* -- Appointment Page -- */
+/* ---------------------- */
+.appointment-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
 }
