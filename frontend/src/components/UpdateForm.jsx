@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import moment from 'moment';
+import {toast} from "react-toastify";
 
 export default function UpdateForm({appointment}) {
     const navigate = useNavigate();
@@ -32,6 +33,15 @@ export default function UpdateForm({appointment}) {
             )
         })
             .then(res => res.json())
+            .then(toast.success('Appointment updated!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            }))
             // .then(data => console.log(data))
             .catch(err => console.log(err));
         navigate('/');

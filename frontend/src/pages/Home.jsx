@@ -4,6 +4,7 @@ import {FaEdit, FaTimes} from "react-icons/fa";
 import {Link} from "react-router-dom";
 import {deleteItem} from "../services/appointmentService";
 import {useEffect, useState} from "react";
+import { toast } from 'react-toastify';
 
 export default function Home() {
     const [data, setData] = useState(null);
@@ -38,6 +39,15 @@ export default function Home() {
         try {
             if (window.confirm('Are you sure you want to delete this appointment?')) {
                 await deleteItem(id);
+                toast.error('Appointment deleted!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
             }
         } catch (error) {
             setError(error);

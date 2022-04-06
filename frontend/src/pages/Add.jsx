@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {setItem} from "../services/appointmentService"
 import {useNavigate} from "react-router-dom";
+import { toast } from 'react-toastify';
 
 export default function Add() {
 
@@ -28,6 +29,16 @@ export default function Add() {
     const onSubmit = (e) => {
         e.preventDefault();
         setItem(appointment);
+        toast.success('Appointment added!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+
         // setAppointment({
         //     title: '', description: '', date: '', type: '', status: '',
         //     street: '', state: '', city: '', zipCode: '',

@@ -6,6 +6,8 @@ import Add from "./pages/Add";
 import About from "./pages/About";
 import Appointment from "./components/Appointment";
 import AppointmentItem from "./components/AppointmentItem";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
     return (
@@ -22,6 +24,7 @@ function App() {
                     </Routes>
                 </div>
             </Router>
+            <ToastContainer />
         </>
     );
 }
