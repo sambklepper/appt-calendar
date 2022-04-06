@@ -3,42 +3,45 @@ import {setItem} from "../services/appointmentService"
 import {useNavigate} from "react-router-dom";
 
 export default function Add() {
-
     const [appointment, setAppointment] = useState({
         title: '', description: '', date: '', type: '', status: '',
         street: '', state: '', city: '', zipCode: '', address: {street: '', state: '', city: '', zipCode: ''},
         notes: '', url: ''
     });
 
-    const {title, description, date, type, status, street, state, city, zipCode, notes, url} = appointment;
+    const {title, description, date, type, status, address: {street, state, city, zipCode}, notes, url} = appointment;
+
     const navigate = useNavigate();
 
     const handleChange = (e) => {
+
         setAppointment((prevState) => ({
             ...prevState,
             [e.target.name]: e.target.value, address: {
                 ...prevState.address,
                 [e.target.name]: e.target.value
-            }
-        }));
 
+            }
+
+        }));
+        console.log(e.target.name)
     }
 
 
     const onSubmit = (e) => {
         e.preventDefault();
         setItem(appointment);
-        setAppointment({
-            title: '', description: '', date: '', type: '', status: '',
-            street: '', state: '', city: '', zipCode: '',
-            notes: '', url: '', address: {street: '', state: '', city: '', zipCode: ''}
-        })
+        // setAppointment({
+        //     title: '', description: '', date: '', type: '', status: '',
+        //     street: '', state: '', city: '', zipCode: '',
+        //     notes: '', url: '', address: {street: '', state: '', city: '', zipCode: ''}
+        // })
         navigate('/');
 
     }
 
     return (<div className='form-wrapper'>
-        {console.log(title, description, date, type, status, street, state, city, zipCode, notes, url)}
+        {console.log(`data: ${title, description, date, type, status, street, state, city, zipCode, notes, url}`)}
         <h1 className='text-center'>Add</h1>
         <form className='add-form-container' onSubmit={onSubmit}>
             <div className='add-form-inputs'>

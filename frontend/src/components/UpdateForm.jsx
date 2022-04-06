@@ -18,10 +18,12 @@ export default function UpdateForm({appointment}) {
                     type,
                     status,
                     description,
-                    street,
-                    city,
-                    state,
-                    zipCode,
+                    address: {
+                        street,
+                        city,
+                        state,
+                        zipCode,
+                    },
                     notes,
                     url
                 }
