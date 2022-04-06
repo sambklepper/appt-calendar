@@ -351,3 +351,19 @@ nav li {
     align-items: center;
     margin-top: 1rem;
 }
+
+/* ------------------------ */
+/* Update Appointment Page- */
+/* ------------------------ */
+.update-form-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 600px;
+    padding: 1.25rem 1.5rem;
+    background-color: #dfdfdf;
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+}

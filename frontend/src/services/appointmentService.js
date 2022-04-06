@@ -27,16 +27,17 @@ export function setItem(appointment) {
 }
 
 // Edit appointment
-export function editAppointment(appointment) {
-    return fetch(`/api/v1/appointments/${appointment.id}`, {
+export function editAppointment(updatedAppointment) {
+    console.log(updatedAppointment)
+    return fetch(`/api/v1/appointments/${updatedAppointment.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(appointment)
+        body: JSON.stringify(updatedAppointment)
 
     })
-        .then(appointment => appointment.json())
+        .then(updatedAppointment => updatedAppointment.json())
         .then((info) => {
             console.log(info)
         })

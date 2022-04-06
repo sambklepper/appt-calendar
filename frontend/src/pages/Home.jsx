@@ -27,6 +27,7 @@ export default function Home() {
                             <Link to={`/edit/appointment/${item._id}`}>
                                  <FaEdit/>
                             </Link>
+
                         </span>
                             <span className="icon-nav-item">
                             <FaTimes onClick={() => deleteItem(item._id)}/>

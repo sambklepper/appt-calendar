@@ -15,8 +15,8 @@ function App() {
                 <div className="app-wrapper">
                     <Routes>
                         <Route path="/" element={<Home/>}/>
-                        <Route path='/appointment/:id' element={<AppointmentItem />}/>
-                        <Route path='/edit/appointment/:id' element={<Appointment />} />
+                        <Route path='/appointment/:id' element={<AppointmentItem  />}/>
+                        <Route path='/edit/appointment/:id' element={<Appointment  />} />
                         <Route path="/add" element={<Add/>}/>
                         <Route path="/about" element={<About/>}/>
                     </Routes>
