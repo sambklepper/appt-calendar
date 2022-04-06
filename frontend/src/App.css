@@ -393,3 +393,8 @@ nav li {
     display: flex;
     flex-direction: column;
 }
+
+.form-header {
+    margin-bottom: 0.75rem;
+    padding: 1rem 0.5rem;
+}

@@ -24,8 +24,8 @@ export default function Appointment() {
     }
 
     return (
-        (<div className='form-wrapper'>
-            <h1 className='text-center'>Edit Appointment</h1>
+        (<div className=''>
+
             <UpdateForm appointment={appointment}/>
         </div>)
     );

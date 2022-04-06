@@ -4,7 +4,7 @@ import {FaEdit, FaTimes} from "react-icons/fa";
 import {Link} from "react-router-dom";
 import {deleteItem} from "../services/appointmentService";
 import {useEffect, useState} from "react";
-import { toast } from 'react-toastify';
+import {toast} from 'react-toastify';
 
 export default function Home() {
     const [data, setData] = useState(null);
@@ -25,15 +25,12 @@ export default function Home() {
             }
         };
         fetchData();
-    }, [url, data, error]);
+    }, [data, loading, error]);
 
     if (loading) {
         return <Spinner/>
     }
 
-    if (error) {
-        return <div>{error.message}</div>
-    }
 
     const deleteAppointment = async (id) => {
         try {
@@ -112,7 +109,7 @@ export default function Home() {
                             <p>{item.status}</p>
                         </div>
                         <div
-                            className={item.type === 'professional' ? 'pill-professional' : item.type === 'personal' ? 'pill-personal' : item.type === 'medical' ? 'pill-medical' : item.type === 'emergency' ? 'pill-emergency' : item.type === 'other' ? 'pill-other' :  'pill'}>
+                            className={item.type === 'professional' ? 'pill-professional' : item.type === 'personal' ? 'pill-personal' : item.type === 'medical' ? 'pill-medical' : item.type === 'emergency' ? 'pill-emergency' : item.type === 'other' ? 'pill-other' : 'pill'}>
                             <p>{item.type}</p>
                         </div>
                     </div>
