@@ -264,6 +264,18 @@ nav li {
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
 }
+.pill-emergency {
+    color: #fff;
+    background-color: #cb1b1b;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+}
+.pill-other {
+    color: #fff;
+    background-color: #be00be;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+}
 
 /* ---------------------- */
 /* ------ Add Page ------ */

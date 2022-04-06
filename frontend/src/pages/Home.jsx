@@ -92,7 +92,7 @@ export default function Home() {
                             <p>{item.status}</p>
                         </div>
                         <div
-                            className={item.type === 'professional' ? 'pill-professional' : item.type === 'personal' ? 'pill-personal' : item.type === 'medical' ? 'pill-medical' : 'pill'}>
+                            className={item.type === 'professional' ? 'pill-professional' : item.type === 'personal' ? 'pill-personal' : item.type === 'medical' ? 'pill-medical' : item.type === 'emergency' ? 'pill-emergency' : item.type === 'other' ? 'pill-other' :  'pill'}>
                             <p>{item.type}</p>
                         </div>
                     </div>
