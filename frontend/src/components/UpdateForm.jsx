@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import moment from 'moment';
 
 export default function UpdateForm({appointment}) {
     const navigate = useNavigate();
@@ -30,14 +31,16 @@ export default function UpdateForm({appointment}) {
             )
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            // .then(data => console.log(data))
             .catch(err => console.log(err));
         navigate('/');
-        console.log(appointment.data._id, title, date, type, status, description, street, city, state, zipCode, notes, url);
+        // console.log(appointment.data._id, title, date, type, status, description, street, city, state, zipCode, notes, url);
     };
+    const formatDate = moment(appointment.data.date).format('YYYY-MM-DD')//change the format string to your preference
+    // console.log(formatDate)
 
     const [title, setTitle] = useState(appointment.data.title);
-    const [date, setDate] = useState(appointment.data.date);
+    const [date, setDate] = useState(formatDate);
     const [type, setType] = useState(appointment.data.type);
     const [status, setStatus] = useState(appointment.data.status);
     const [description, setDescription] = useState(appointment.data.description);
@@ -47,6 +50,7 @@ export default function UpdateForm({appointment}) {
     const [zipCode, setZipCode] = useState(appointment.data.address.zipCode);
     const [notes, setNotes] = useState(appointment.data.notes);
     const [url, setUrl] = useState(appointment.data.url);
+
 
     return (
         <div>
@@ -60,7 +64,7 @@ export default function UpdateForm({appointment}) {
                     <div className="form-label">
                         <label htmlFor="date">Date</label>
                         <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)}/>
-
+                        {/*{console.log(date)}*/}
                     </div>
                     <div className="form-label">
                         <label htmlFor="type">Type</label>
