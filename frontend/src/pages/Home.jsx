@@ -34,6 +34,16 @@ export default function Home() {
         return <div>{error.message}</div>
     }
 
+    const deleteAppointment = async (id) => {
+        try {
+            if (window.confirm('Are you sure you want to delete this appointment?')) {
+                await deleteItem(id);
+            }
+        } catch (error) {
+            setError(error);
+        }
+    };
+
     return (<div>
         <h1 className='text-center'>Appointments</h1>
         <div className="items-list">
@@ -48,7 +58,7 @@ export default function Home() {
 
                         </span>
                         <span className="icon-nav-item">
-                            <FaTimes className='delete-icon' onClick={() => deleteItem(item._id)}/>
+                            <FaTimes className='delete-icon' onClick={() => deleteAppointment(item._id)}/>
                     </span>
                     </div>
                     <div className="card-header">
