@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {setItem} from "../services/appointmentService"
+import {useNavigate} from "react-router-dom";
 
 export default function Add() {
 
@@ -10,7 +11,7 @@ export default function Add() {
     });
 
     const {title, description, date, type, status, street, state, city, zipCode, notes, url} = appointment;
-
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setAppointment((prevState) => ({
@@ -32,6 +33,7 @@ export default function Add() {
             street: '', state: '', city: '', zipCode: '',
             notes: '', url: '', address: {street: '', state: '', city: '', zipCode: ''}
         })
+        navigate('/');
 
     }
 
