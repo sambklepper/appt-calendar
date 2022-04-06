@@ -1,7 +1,8 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function UpdateForm({appointment}) {
-    // console.log(appointment);
+    const navigate = useNavigate();
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -11,25 +12,26 @@ export default function UpdateForm({appointment}) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                _id: appointment.data._id,
-                title,
-                date,
-                type,
-                status,
-                description,
-                street,
-                city,
-                state,
-                zipCode,
-                notes,
-                url
-            }
+                    _id: appointment.data._id,
+                    title,
+                    date,
+                    type,
+                    status,
+                    description,
+                    street,
+                    city,
+                    state,
+                    zipCode,
+                    notes,
+                    url
+                }
             )
         })
             .then(res => res.json())
             .then(data => console.log(data))
             .catch(err => console.log(err));
-        console.log(appointment.data._id,title, date, type, status, description, street, city, state, zipCode, notes, url);
+        navigate('/');
+        console.log(appointment.data._id, title, date, type, status, description, street, city, state, zipCode, notes, url);
     };
 
     const [title, setTitle] = useState(appointment.data.title);

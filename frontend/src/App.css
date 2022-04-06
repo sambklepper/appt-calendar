@@ -7,6 +7,11 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: #4444d9;
+}
+
 .app-wrapper {
     display: flex;
     justify-content: center;
@@ -143,6 +148,7 @@ nav li {
 
 .icon-nav-item {
     margin-left: 0.5rem;
+    color: black;
 }
 
 .icon-nav-item a {
@@ -152,6 +158,14 @@ nav li {
 
 .icon-nav-item a:hover {
     color: darkseagreen;
+}
+
+.delete-icon {
+    color: slategray;
+}
+
+.delete-icon:hover {
+    color: red;
 }
 
 .card-header h3 {

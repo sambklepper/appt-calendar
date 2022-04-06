@@ -9,7 +9,6 @@ import {deleteItem} from "../services/appointmentService";
 export default function Home() {
     const url = '/api/v1/appointments';
     const {data, loading} = useFetch(url);
-    // const navigate = useNavigate();
 
     if (loading) {
         return <Spinner/>
@@ -20,17 +19,17 @@ export default function Home() {
         <div className="items-list">
             {/*{console.log(data?.data)}*/}
             {data?.data.map((item => (
-                <Link to={`/appointment/${item._id}`}>
+                // <Link to={`/appointment/${item._id}`}>
                     <div key={item._id} className="card">
                         <div className="icon-nav">
                         <span className="icon-nav-item">
                             <Link to={`/edit/appointment/${item._id}`}>
-                                 <FaEdit/>
+                                 <FaEdit className='edit-icon' />
                             </Link>
 
                         </span>
                             <span className="icon-nav-item">
-                            <FaTimes onClick={() => deleteItem(item._id)}/>
+                            <FaTimes className='delete-icon' onClick={() => deleteItem(item._id)}/>
                     </span>
                         </div>
                         <div className="card-header">
@@ -79,7 +78,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </Link>
+                // </Link>
             )))}
         </div>
     </div>)
