@@ -6,6 +6,7 @@ export default function UpdateForm({appointment}) {
     const navigate = useNavigate();
 
     const onSubmit = (e) => {
+        const timeZonedDate = moment(date).zone(-60).format('YYYY-MM-DD HH:mm')
         e.preventDefault();
         fetch(`/api/v1/appointments/${appointment.data._id}`, {
             method: 'PUT',
@@ -15,7 +16,7 @@ export default function UpdateForm({appointment}) {
             body: JSON.stringify({
                     _id: appointment.data._id,
                     title,
-                    date,
+                    date: timeZonedDate,
                     type,
                     status,
                     description,
