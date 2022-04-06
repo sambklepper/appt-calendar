@@ -31,7 +31,6 @@ export default function Home() {
         return <Spinner/>
     }
 
-
     const deleteAppointment = async (id) => {
         try {
             if (window.confirm('Are you sure you want to delete this appointment?')) {
@@ -48,6 +47,16 @@ export default function Home() {
             }
         } catch (error) {
             setError(error);
+            console.log(error.message);
+            toast.error('Error deleting appointment!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
     };
 

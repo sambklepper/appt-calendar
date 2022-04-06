@@ -25,7 +25,6 @@ export default function Appointment() {
 
     return (
         (<div className=''>
-
             <UpdateForm appointment={appointment}/>
         </div>)
     );

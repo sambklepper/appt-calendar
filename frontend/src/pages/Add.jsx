@@ -4,7 +4,6 @@ import {useNavigate} from "react-router-dom";
 import { toast } from 'react-toastify';
 
 export default function Add() {
-
     const [appointment, setAppointment] = useState({
         title: '', description: '', date: '', type: '', status: '',
         street: '', state: '', city: '', zipCode: '', address: {street: '', state: '', city: '', zipCode: ''},
@@ -25,7 +24,6 @@ export default function Add() {
 
     }
 
-
     const onSubmit = (e) => {
         e.preventDefault();
         setItem(appointment);
@@ -38,14 +36,7 @@ export default function Add() {
             draggable: true,
             progress: undefined,
         });
-
-        // setAppointment({
-        //     title: '', description: '', date: '', type: '', status: '',
-        //     street: '', state: '', city: '', zipCode: '',
-        //     notes: '', url: '', address: {street: '', state: '', city: '', zipCode: ''}
-        // })
         navigate('/');
-
     }
 
     return (<div className='form-wrapper'>
@@ -128,7 +119,6 @@ export default function Add() {
             </div>
             <div className='add-form-inputs'>
                 <div className='optional-wrapper'>
-
                     <label htmlFor='notes'>Notes</label>
                     <p className="small-text">(Optional)</p>
                 </div>
