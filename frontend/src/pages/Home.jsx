@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import {deleteItem} from "../services/appointmentService";
 import {useEffect, useState} from "react";
 import {toast} from 'react-toastify';
+import Calendar from "../components/Calendar";
 
 export default function Home() {
     const [data, setData] = useState(null);
@@ -25,7 +26,9 @@ export default function Home() {
             }
         };
         fetchData();
-    }, [data, loading, error]);
+    }, []);
+
+    console.log(data);
 
     if (loading) {
         return <Spinner/>
@@ -71,18 +74,23 @@ export default function Home() {
                             <Link to={`/edit/appointment/${item._id}`}>
                                  <FaEdit className='edit-icon'/>
                             </Link>
-
                         </span>
                         <span className="icon-nav-item">
                             <FaTimes className='delete-icon' onClick={() => deleteAppointment(item._id)}/>
-                    </span>
+                        </span>
                     </div>
                     <div className="card-header">
                         <h3>{item.title}</h3>
-                        <p><Moment format="MM/DD/YYYY">{item.date}</Moment></p>
+
+
+
+                    </div>
+                    <div className="time-info">
+
+                        <p className='card-date'><Moment format="MM/DD/YYYY">{item.date}</Moment></p>
+                        <p className='card-time'>{item.time}</p>
                     </div>
                     <div className="card-description">
-
                         <p>{item.description}</p>
                     </div>
 
@@ -126,6 +134,7 @@ export default function Home() {
                 // </Link>
             )))}
         </div>
+
     </div>)
 
 }

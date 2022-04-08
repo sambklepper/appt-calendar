@@ -135,8 +135,25 @@ nav li {
 
 .card-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 0.25rem;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-date {
+    font-size: 1.25rem;
+    color: #899bb0;
+}
+
+.card-time {
+    font-size: 1.25rem;
+    color: #899bb0;
 }
 
 .icon-nav {
@@ -175,6 +192,7 @@ nav li {
 }
 
 .card-description {
+    width: 100%;
     font-size: 1rem;
     color: black;
     margin-bottom: 0.25rem;
@@ -187,22 +205,17 @@ nav li {
     margin-bottom: 0.25rem;
 }
 
-.notes h4 {
+.notes h4, .address h4 {
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 0.15rem;
 }
 
-/*.notes {*/
-/*    border-right: 1px solid #ccc;*/
-/*    padding-right: 1rem;*/
-/*}*/
-
 .address {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    font-size: 14px;
 }
 
 .links {
@@ -233,18 +246,21 @@ nav li {
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
 }
+
 .pill-confirmed {
     background-color: blue;
     color: #fff;
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
 }
+
 .pill-cancelled {
     background-color: red;
     color: #fff;
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
 }
+
 .pill-professional {
     color: dodgerblue;
     background-color: lightblue;
@@ -258,18 +274,21 @@ nav li {
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
 }
+
 .pill-medical {
     color: #fff;
     background-color: deeppink;
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
 }
+
 .pill-emergency {
     color: #fff;
     background-color: #cb1b1b;
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
 }
+
 .pill-other {
     color: #fff;
     background-color: #be00be;
@@ -300,7 +319,7 @@ nav li {
     margin-bottom: 1rem;
 }
 
-.add-form-inputs label{
+.add-form-inputs label {
     margin-bottom: 0.25rem;
     font-size: 1.25rem;
     font-weight: bold;
@@ -397,4 +416,102 @@ nav li {
 .form-header {
     margin-bottom: 0.75rem;
     padding: 1rem 0.5rem;
+}
+
+/* ------------------------ */
+/* ------- Calendar ------- */
+/* ------------------------ */
+
+.calendar-wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+.min-container {
+    border: 5px solid limegreen;
+    width: min(100% - 2rem, 600px);
+    margin-inline: auto;
+}
+
+.calendar-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #dfdfdf;
+    border-radius: 0.75rem;
+    width: 100%;
+    min-width: 1200px;
+}
+
+.calendar-header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-header-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-header-left-month-text,
+.calendar-header-right-month-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+.calendar-header-left-year-text,
+.calendar-header-right-year-text{
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+.calendar-header-left-month-arrow,
+.calendar-header-left-year-arrow,
+.calendar-header-right-month-arrow,
+.calendar-header-right-year-arrow{
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+.calendar-header-center-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+.calendar-body-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-body-week-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0;
+    border-radius: 0.75rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    min-height: 150px;
+}
+
+.calendar-body-week-day span {
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    background-color: #dfdfdf;
+    width: 100%;
+    padding: 0.25rem 0;
+    border-radius: 0.75rem 0.75rem 0 0;
 }
