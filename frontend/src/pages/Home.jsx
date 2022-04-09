@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import {deleteItem} from "../services/appointmentService";
 import {useEffect, useState} from "react";
 import {toast} from 'react-toastify';
-import Calendar from "../components/Calendar";
+
 
 export default function Home() {
     const [data, setData] = useState(null);
@@ -81,7 +81,6 @@ export default function Home() {
                     </div>
                     <div className="card-header">
                         <h3>{item.title}</h3>
-
 
 
                     </div>

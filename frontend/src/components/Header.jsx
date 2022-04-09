@@ -1,12 +1,12 @@
 import {Link} from 'react-router-dom';
-import {FaHome, FaInfoCircle, FaPlus} from "react-icons/fa";
+import {FaCalendarAlt, FaHome, FaInfoCircle, FaPlus} from "react-icons/fa";
 
 export default function Header() {
     return (<nav className="nav">
         <div className="nav-container">
             <div>
                 <Link to="/">
-                    <span  className="logo">Appt-Cal</span>
+                    <span className="logo">Appt-Cal</span>
                 </Link>
             </div>
             <div className="nav-links">
@@ -14,17 +14,24 @@ export default function Header() {
                     <li>
                         <Link to="/">
                             <span className='nav-icon'>
-                                <FaHome />
+                                <FaHome/>
                             </span>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/add"><span className='nav-icon'><FaPlus /></span></Link>
+                        <Link to="/calendar">
+                            <span className='nav-icon'>
+                                <FaCalendarAlt/>
+                            </span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/add"><span className='nav-icon'><FaPlus/></span></Link>
                     </li>
                     <li>
                         <Link to="/about">
                             <span className='nav-icon'>
-                                <FaInfoCircle />
+                                <FaInfoCircle/>
                             </span>
                         </Link>
                     </li>

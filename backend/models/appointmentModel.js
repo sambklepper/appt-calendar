@@ -22,9 +22,13 @@ const appointmentSchema = mongoose.Schema(
             enum: ['pending', 'confirmed', 'cancelled'],
             default: 'pending'
         },
-        time: {
+        start: {
             type: String,
-            required: [true, 'Time is required'],
+            required: [true, 'Start time is required'],
+        },
+        end: {
+            type: String,
+            required: [true, 'End time is required'],
         },
         description: {
             type: String,
