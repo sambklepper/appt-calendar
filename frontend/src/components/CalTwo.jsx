@@ -22,9 +22,12 @@ const events = [
         end: 'Tue Apr 12 2022 18:00:00 GMT-0500 (Central Daylight Time)',
         title: "Start new job @ Bouncing Pixel"
     }
+
 ]
-console.log(events)
-export default function CalTwo(props) {
+
+export default function CalTwo() {
+    console.log(events)
+
     return (
         <div>
             <Calendar

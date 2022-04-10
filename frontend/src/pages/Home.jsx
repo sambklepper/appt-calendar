@@ -3,9 +3,8 @@ import Spinner from "../components/Spinner";
 import {FaEdit, FaTimes} from "react-icons/fa";
 import {Link} from "react-router-dom";
 import {deleteItem} from "../services/appointmentService";
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {toast} from 'react-toastify';
-
 
 export default function Home() {
     const [data, setData] = useState(null);
@@ -13,20 +12,37 @@ export default function Home() {
     const [error, setError] = useState(null);
     const url = '/api/v1/appointments';
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url);
-                const json = await response.json();
-                setData(json);
-                setLoading(false);
-            } catch (error) {
-                setError(error);
-                setLoading(false);
-            }
-        };
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await fetch(url);
+    //             const json = await response.json();
+    //             setData(json);
+    //             setLoading(false);
+    //         } catch (error) {
+    //             setError(error);
+    //             setLoading(false);
+    //         }
+    //     };
+    //     fetchData();
+    // }, []);
+    
+    // Memoize the function to avoid re-rendering
+    const fetchData = async () => {
+        try {
+            const response = await fetch(url);
+            const json = await response.json();
+            setData(json);
+            setLoading(false);
+        } catch (error) {
+            setError(error);
+            setLoading(false);
+        }
+    };
+
+    const dataMemoized = useMemo(() => fetchData(), []);
+
+
 
     console.log(data);
 
@@ -66,6 +82,7 @@ export default function Home() {
     return (<div>
         <h1 className='text-center'>Appointments</h1>
         <div className="items-list">
+
             {/*{console.log(data?.data)}*/}
             {data?.data.map((item => (// <Link to={`/appointment/${item._id}`}>
                 <div key={item._id} className="card">
@@ -133,7 +150,7 @@ export default function Home() {
                 // </Link>
             )))}
         </div>
-
+{/*<CalTwo data={data} />*/}
     </div>)
 
 }
