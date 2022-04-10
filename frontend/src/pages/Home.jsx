@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import {deleteItem} from "../services/appointmentService";
 import {useEffect, useMemo, useState} from "react";
 import {toast} from 'react-toastify';
+import CalTwo from "../components/CalTwo";
 
 export default function Home() {
     const [data, setData] = useState(null);
@@ -25,8 +26,8 @@ export default function Home() {
     //         }
     //     };
     //     fetchData();
-    // }, []);
-    
+    // }, [data, url]);
+
     // Memoize the function to avoid re-rendering
     const fetchData = async () => {
         try {
@@ -40,9 +41,7 @@ export default function Home() {
         }
     };
 
-    const dataMemoized = useMemo(() => fetchData(), []);
-
-
+    const dataMemoized = useMemo(() => fetchData(), [data]);
 
     console.log(data);
 
@@ -150,7 +149,7 @@ export default function Home() {
                 // </Link>
             )))}
         </div>
-{/*<CalTwo data={data} />*/}
+        <CalTwo data={data}/>
     </div>)
 
 }

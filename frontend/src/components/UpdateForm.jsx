@@ -9,6 +9,8 @@ export default function UpdateForm({appointment}) {
     const [title, setTitle] = useState(appointment.data.title);
     const [date, setDate] = useState(formatDate);
     const [type, setType] = useState(appointment.data.type);
+    const [start, setStart] = useState(appointment.data.start);
+    const [end, setEnd] = useState(appointment.data.end);
     const [status, setStatus] = useState(appointment.data.status);
     const [description, setDescription] = useState(appointment.data.description);
     const [street, setStreet] = useState(appointment.data.address.street);
@@ -32,6 +34,8 @@ export default function UpdateForm({appointment}) {
                     date: timeZonedDate,
                     type,
                     status,
+                start,
+                end,
                     description,
                     address: {
                         street,
@@ -73,6 +77,66 @@ export default function UpdateForm({appointment}) {
                     <label htmlFor="date">Date</label>
                     <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)}/>
                     {/*{console.log(date)}*/}
+                </div>
+                <div className="add-form-inputs">
+                    <label htmlFor="start">Start Time</label>
+                    <select className='add-form-select-textarea' id="start" value={start}
+                            onChange={(e) => setStart(e.target.value)}>
+                        <option value={`${date}` + ` ` + `12:00 AM`}>12:00 AM</option>
+                        <option value={`${date}` + ` ` + `1:00 AM`}>1:00 AM</option>
+                        <option value={`${date}` + ` ` + `2:00 AM`}>2:00 AM</option>
+                        <option value={`${date}` + ` ` + `3:00 AM`}>3:00 AM</option>
+                        <option value={`${date}` + ` ` + `4:00 AM`}>4:00 AM</option>
+                        <option value={`${date}` + ` ` + `5:00 AM`}>5:00 AM</option>
+                        <option value={`${date}` + ` ` + `6:00 AM`}>6:00 AM</option>
+                        <option value={`${date}` + ` ` + `7:00 AM`}>7:00 AM</option>
+                        <option value={`${date}` + ` ` + `8:00 AM`}>8:00 AM</option>
+                        <option value={`${date}` + ` ` + `9:00 AM`}>9:00 AM</option>
+                        <option value={`${date}` + ` ` + `10:00 AM`}>10:00 AM</option>
+                        <option value={`${date}` + ` ` + `11:00 AM`}>11:00 AM</option>
+                        <option value={`${date}` + ` ` + `12:00 PM`}>12:00 PM</option>
+                        <option value={`${date}` + ` ` + `1:00 PM`}>1:00 PM</option>
+                        <option value={`${date}` + ` ` + `2:00 PM`}>2:00 PM</option>
+                        <option value={`${date}` + ` ` + `3:00 PM`}>3:00 PM</option>
+                        <option value={`${date}` + ` ` + `4:00 PM`}>4:00 PM</option>
+                        <option value={`${date}` + ` ` + `5:00 PM`}>5:00 PM</option>
+                        <option value={`${date}` + ` ` + `6:00 PM`}>6:00 PM</option>
+                        <option value={`${date}` + ` ` + `7:00 PM`}>7:00 PM</option>
+                        <option value={`${date}` + ` ` + `8:00 PM`}>8:00 PM</option>
+                        <option value={`${date}` + ` ` + `9:00 PM`}>9:00 PM</option>
+                        <option value={`${date}` + ` ` + `10:00 PM`}>10:00 PM</option>
+                        <option value={`${date}` + ` ` + `11:00 PM`}>11:00 PM</option>
+                    </select>
+                </div>
+                <div className="add-form-inputs">
+                    <label htmlFor="end">End Time</label>
+                    <select className='add-form-select-textarea' id="end" value={end}
+                            onChange={(e) => setEnd(e.target.value)}>
+                        <option value={`${date}` + ` ` + `12:00 AM`}>12:00 AM</option>
+                        <option value={`${date}` + ` ` + `1:00 AM`}>1:00 AM</option>
+                        <option value={`${date}` + ` ` + `2:00 AM`}>2:00 AM</option>
+                        <option value={`${date}` + ` ` + `3:00 AM`}>3:00 AM</option>
+                        <option value={`${date}` + ` ` + `4:00 AM`}>4:00 AM</option>
+                        <option value={`${date}` + ` ` + `5:00 AM`}>5:00 AM</option>
+                        <option value={`${date}` + ` ` + `6:00 AM`}>6:00 AM</option>
+                        <option value={`${date}` + ` ` + `7:00 AM`}>7:00 AM</option>
+                        <option value={`${date}` + ` ` + `8:00 AM`}>8:00 AM</option>
+                        <option value={`${date}` + ` ` + `9:00 AM`}>9:00 AM</option>
+                        <option value={`${date}` + ` ` + `10:00 AM`}>10:00 AM</option>
+                        <option value={`${date}` + ` ` + `11:00 AM`}>11:00 AM</option>
+                        <option value={`${date}` + ` ` + `12:00 PM`}>12:00 PM</option>
+                        <option value={`${date}` + ` ` + `1:00 PM`}>1:00 PM</option>
+                        <option value={`${date}` + ` ` + `2:00 PM`}>2:00 PM</option>
+                        <option value={`${date}` + ` ` + `3:00 PM`}>3:00 PM</option>
+                        <option value={`${date}` + ` ` + `4:00 PM`}>4:00 PM</option>
+                        <option value={`${date}` + ` ` + `5:00 PM`}>5:00 PM</option>
+                        <option value={`${date}` + ` ` + `6:00 PM`}>6:00 PM</option>
+                        <option value={`${date}` + ` ` + `7:00 PM`}>7:00 PM</option>
+                        <option value={`${date}` + ` ` + `8:00 PM`}>8:00 PM</option>
+                        <option value={`${date}` + ` ` + `9:00 PM`}>9:00 PM</option>
+                        <option value={`${date}` + ` ` + `10:00 PM`}>10:00 PM</option>
+                        <option value={`${date}` + ` ` + `11:00 PM`}>11:00 PM</option>
+                    </select>
                 </div>
                 <div className="add-form-inputs">
                     <label htmlFor="type">Type</label>
