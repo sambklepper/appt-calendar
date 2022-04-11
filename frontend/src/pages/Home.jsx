@@ -41,7 +41,7 @@ export default function Home() {
         }
     };
 
-    const dataMemoized = useMemo(() => fetchData(), [data]);
+    const dataMemoized = useMemo(() => fetchData(), []);
 
     console.log(data);
 
@@ -102,7 +102,7 @@ export default function Home() {
                     </div>
                     <div className="time-info">
 
-                        <p className='card-date'><Moment format="MM/DD/YYYY">{item.date}</Moment></p>
+                        <p className='card-date'><Moment format="MM/DD/YYYY">{item.startDate}</Moment></p>
                         <p className='card-time'>{item.time}</p>
                     </div>
                     <div className="card-description">
