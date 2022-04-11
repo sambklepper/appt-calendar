@@ -36,7 +36,7 @@ export default function CalTwo({data}) {
             title: event.title
         }
     })
-    console.log(events)
+    // console.log(events)
     return (
         <div>
             <Calendar
@@ -44,7 +44,8 @@ export default function CalTwo({data}) {
                 events={events}
                 startAccessor="start"
                 endAccessor="end"
-                style={{height: 500}}
+                style={{height: '85vh'}}
+                popup
             />
         </div>
     )

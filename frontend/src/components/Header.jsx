@@ -18,13 +18,13 @@ export default function Header() {
                             </span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to="/calendar">
-                            <span className='nav-icon'>
-                                <FaCalendarAlt/>
-                            </span>
-                        </Link>
-                    </li>
+                    {/*<li>*/}
+                    {/*    <Link to="/calendar">*/}
+                    {/*        <span className='nav-icon'>*/}
+                    {/*            <FaCalendarAlt/>*/}
+                    {/*        </span>*/}
+                    {/*    </Link>*/}
+                    {/*</li>*/}
                     <li>
                         <Link to="/add"><span className='nav-icon'><FaPlus/></span></Link>
                     </li>

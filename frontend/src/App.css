@@ -13,10 +13,9 @@ a {
 }
 
 .app-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1.25rem;
+    width: 90%;
+    margin: auto;
+    padding: 1.5rem;
 }
 
 .text-center {
@@ -467,7 +466,7 @@ nav li {
 }
 
 .calendar-header-left-year-text,
-.calendar-header-right-year-text{
+.calendar-header-right-year-text {
     font-size: 1.25rem;
     font-weight: bold;
     letter-spacing: 0.05rem;
@@ -476,7 +475,7 @@ nav li {
 .calendar-header-left-month-arrow,
 .calendar-header-left-year-arrow,
 .calendar-header-right-month-arrow,
-.calendar-header-right-year-arrow{
+.calendar-header-right-year-arrow {
     font-size: 1.25rem;
     font-weight: bold;
     letter-spacing: 0.05rem;

@@ -43,7 +43,7 @@ export default function Home() {
 
     const dataMemoized = useMemo(() => fetchData(), []);
 
-    console.log(data);
+    // console.log(data);
 
     if (loading) {
         return <Spinner/>
@@ -79,76 +79,76 @@ export default function Home() {
     };
 
     return (<div>
-        <h1 className='text-center'>Appointments</h1>
-        <div className="items-list">
+        {/*<h1 className='text-center'>Appointments</h1>*/}
+        {/*<div className="items-list">*/}
 
-            {/*{console.log(data?.data)}*/}
-            {data?.data.map((item => (// <Link to={`/appointment/${item._id}`}>
-                <div key={item._id} className="card">
-                    <div className="icon-nav">
-                        <span className="icon-nav-item">
-                            <Link to={`/edit/appointment/${item._id}`}>
-                                 <FaEdit className='edit-icon'/>
-                            </Link>
-                        </span>
-                        <span className="icon-nav-item">
-                            <FaTimes className='delete-icon' onClick={() => deleteAppointment(item._id)}/>
-                        </span>
-                    </div>
-                    <div className="card-header">
-                        <h3>{item.title}</h3>
+        {/*    /!*{console.log(data?.data)}*!/*/}
+        {/*    {data?.data.map((item => (// <Link to={`/appointment/${item._id}`}>*/}
+        {/*        <div key={item._id} className="card">*/}
+        {/*            <div className="icon-nav">*/}
+        {/*                <span className="icon-nav-item">*/}
+        {/*                    <Link to={`/edit/appointment/${item._id}`}>*/}
+        {/*                         <FaEdit className='edit-icon'/>*/}
+        {/*                    </Link>*/}
+        {/*                </span>*/}
+        {/*                <span className="icon-nav-item">*/}
+        {/*                    <FaTimes className='delete-icon' onClick={() => deleteAppointment(item._id)}/>*/}
+        {/*                </span>*/}
+        {/*            </div>*/}
+        {/*            <div className="card-header">*/}
+        {/*                <h3>{item.title}</h3>*/}
 
 
-                    </div>
-                    <div className="time-info">
+        {/*            </div>*/}
+        {/*            <div className="time-info">*/}
 
-                        <p className='card-date'><Moment format="MM/DD/YYYY">{item.startDate}</Moment></p>
-                        <p className='card-time'>{item.time}</p>
-                    </div>
-                    <div className="card-description">
-                        <p>{item.description}</p>
-                    </div>
+        {/*                <p className='card-date'><Moment format="MM/DD/YYYY">{item.startDate}</Moment></p>*/}
+        {/*                <p className='card-time'>{item.time}</p>*/}
+        {/*            </div>*/}
+        {/*            <div className="card-description">*/}
+        {/*                <p>{item.description}</p>*/}
+        {/*            </div>*/}
 
-                    <div className="card-body">
-                        <div className="notes">
-                            <h4>Notes</h4>
-                            <p>{item.notes.map((note, index) => (<span key={index}>{note}</span>))}</p>
-                        </div>
-                        <div className="address">
-                            <h4>Address</h4>
-                            <p>
-                                {item.address.street}
-                            </p>
-                            <p>
-                                {item.address.city}, <span>{item.address.state}</span>
-                            </p>
-                            <p>
-                                {item.address.zipCode}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="links">
-                        <h4>Links</h4>
-                        <p>
-                            {item.url ? (<a href={item.url} target="_blank"
-                                            rel="noopener noreferrer">{item.url}</a>) : ''}
-                        </p>
-                    </div>
+        {/*            <div className="card-body">*/}
+        {/*                <div className="notes">*/}
+        {/*                    <h4>Notes</h4>*/}
+        {/*                    <p>{item.notes.map((note, index) => (<span key={index}>{note}</span>))}</p>*/}
+        {/*                </div>*/}
+        {/*                <div className="address">*/}
+        {/*                    <h4>Address</h4>*/}
+        {/*                    <p>*/}
+        {/*                        {item.address.street}*/}
+        {/*                    </p>*/}
+        {/*                    <p>*/}
+        {/*                        {item.address.city}, <span>{item.address.state}</span>*/}
+        {/*                    </p>*/}
+        {/*                    <p>*/}
+        {/*                        {item.address.zipCode}*/}
+        {/*                    </p>*/}
+        {/*                </div>*/}
+        {/*            </div>*/}
+        {/*            <div className="links">*/}
+        {/*                <h4>Links</h4>*/}
+        {/*                <p>*/}
+        {/*                    {item.url ? (<a href={item.url} target="_blank"*/}
+        {/*                                    rel="noopener noreferrer">{item.url}</a>) : ''}*/}
+        {/*                </p>*/}
+        {/*            </div>*/}
 
-                    <div className="card-footer">
-                        <div
-                            className={item.status === 'pending' ? 'pill-pending' : item.status === 'confirmed' ? 'pill-confirmed' : item.status === 'cancelled' ? 'pill-cancelled' : 'pill'}>
-                            <p>{item.status}</p>
-                        </div>
-                        <div
-                            className={item.type === 'professional' ? 'pill-professional' : item.type === 'personal' ? 'pill-personal' : item.type === 'medical' ? 'pill-medical' : item.type === 'emergency' ? 'pill-emergency' : item.type === 'other' ? 'pill-other' : 'pill'}>
-                            <p>{item.type}</p>
-                        </div>
-                    </div>
-                </div>
-                // </Link>
-            )))}
-        </div>
+        {/*            <div className="card-footer">*/}
+        {/*                <div*/}
+        {/*                    className={item.status === 'pending' ? 'pill-pending' : item.status === 'confirmed' ? 'pill-confirmed' : item.status === 'cancelled' ? 'pill-cancelled' : 'pill'}>*/}
+        {/*                    <p>{item.status}</p>*/}
+        {/*                </div>*/}
+        {/*                <div*/}
+        {/*                    className={item.type === 'professional' ? 'pill-professional' : item.type === 'personal' ? 'pill-personal' : item.type === 'medical' ? 'pill-medical' : item.type === 'emergency' ? 'pill-emergency' : item.type === 'other' ? 'pill-other' : 'pill'}>*/}
+        {/*                    <p>{item.type}</p>*/}
+        {/*                </div>*/}
+        {/*            </div>*/}
+        {/*        </div>*/}
+        {/*        // </Link>*/}
+        {/*    )))}*/}
+        {/*</div>*/}
         <CalTwo data={data}/>
     </div>)
 
